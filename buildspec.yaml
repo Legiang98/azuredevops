@@ -1,9 +1,0 @@
-trigger:
-- main  # Change this to your default branch name if it's not 'main'
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- script: echo "Hello, Azure DevOps!"
-  displayName: 'Echo Hello Message'
