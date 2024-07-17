@@ -1,0 +1,23 @@
+# YAML syntax is used for Azure DevOps pipelines
+
+trigger:
+  - main  # Trigger the pipeline on every push to the main branch
+
+pool:
+  # Choose an appropriate agent pool for your project (e.g., windows-latest)
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - script: npm install  # Install dependencies (assuming Node.js project)
+    displayName: 'Install dependencies'
+
+  - script: npm run build  # Build the web application (adjust command based on your project)
+    displayName: 'Build application'
+
+  - publish: $(System.DefaultWorkingDirectory)/dist  # Publish the built artifacts (replace dist with your output folder)
+    artifact: 'web-app'  # Define an artifact name
+
+  - deploy: $(Pipeline.Workspace)/drop  # Deployment step (replace with your deployment process)
+    displayName: 'Deploy application'
+    condition: succeeded()  # Only deploy if previous steps succeed
+    environment: 'production'  # Define the deployment environment (optional)

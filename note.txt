@@ -1,0 +1,13 @@
+
+Collaborate with software engineers to understand infrastructure requirements 
+and implement scalable solutions. Design and deploy cloud infrastructure using
+ Microsoft Azure services such as Azure Kubernetes Service (AKS), Azure Virtual 
+ Networks, and Azure Cognitive Services Implement and maintain GitOps workflows 
+ to automate infrastructure provisioning and deployment processes. 
+ Develop and maintain CI/CD pipelines with Azure DevOps and Jenkins to 
+ enable continuous integration and delivery of software applications. 
+ Monitor infrastructure performance and troubleshoot issues to ensure high 
+ availability and reliability. Implement security best practices to protect 
+ infrastructure and data assets. Troubleshoot and resolve issues during the 
+ deployment and operations of the product in dev, test, staging, and production environments.
+ 

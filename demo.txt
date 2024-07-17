@@ -1,0 +1,38 @@
+# pod I identity and managed identity
+# Pod Identity assigns an Azure Active Directory (AAD) identity to a pod, allowing it to authenticate with other services using AAD tokens
+# Managed Identity:  System-assigned and User-assigned: System-assigned identities are created and deleted with the resource, while User-assigned identities can be shared across multiple resources.
+#To handle auto-scaling in AKS, use the Kubernetes Horizontal Pod Autoscaler (HPA) and Azure’s Virtual Machine Scale Sets (VMSS). HPA scales pods based on CPU utilization or custom metrics, while VMSS adjusts node count.
+
+2. Azure Private Link:
+– Expose AKS API server over a private IP within the virtual network
+– Traffic remains within the Azure backbone network
+
+– Security: Implement role-based access control (RBAC) and integrate with Azure Active Directory.
+
+Open Policy Agent (OPA)
+
+
+15. How do you handle disaster recovery and backup strategies for AKS applications and data?
+1. Use Azure-native services like Azure Backup to back up persistent volumes (PVs) in AKS.
+
+Describe the process of setting up and managing role-based access control (RBAC) within an AKS cluster.
+- Create ClusterRoles or Roles to define permissions for resources and actions (e.g., create, update, delete). Use YAML manifests to define roles with API groups, resources, and verbs.
+- Bind Roles: Assign roles to users or groups using RoleBindings (for namespace-scoped access) or ClusterRoleBindings (for cluster-wide access). Specify subjects (users/groups) and reference the defined roles in the binding manifest.
+-  Authenticate Users: Configure Kubernetes to authenticate users via Azure Active Directory (AAD) integration. Register an AAD app, grant required permissions, and configure AKS to use the AAD app for authentication.
+
+
+The basic point of difference between a stateful and a stateless application is the need of persistent storage.
+
+argocd: tao user -> tao roles: application, get <> /allow
+
+
+Managed identities are primarily used for granting pods access to Azure resources (like Azure Key Vault, Storage Accounts, etc.). 
+They don't directly replace or require changes to your Kubernetes RBAC setup.
+
+
+***ARM template
+- Schema: version of template
+- parameters: input value to the deployment
+- variables
+- function
+- resources
